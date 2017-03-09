@@ -1,0 +1,33 @@
+[simulation]
+rotation_cycling=false
+start_date=2015213 
+stop_date=2015243 
+[output]
+run_time_graph=true
+display_profile=false
+OBSOLETE_NOW_DISCOVERED_report_format=C:\Simulation\Database\Format\all daily season annual XLS.FMT
+options=no_options.cs_output_options
+[submodels]
+hourly=0
+run_chemical=true
+run_nitrogen=true
+run_erosion=false
+run_freezing=true
+erode_soil=false
+subdivide_horizons=true
+salinity=false
+infiltration_model=cascade_hourly
+snow_pack_model=simple
+organic_matter_and_residue_model=multiple_SOM_multiple_residues
+runoff_model=curve_number
+rain_event_distribution=realistic
+rainfall_intensity=false
+CPF_irrigation_disable=false
+precipitaton_duration=1440
+transpiration_model=leaf_and_root
+evapotranspiration_model=automatic
+orchard_interception_model=Oyarzun-Stockle
+PT_constant=1.25999999 Priestley-Taylor constant
+[CO2]
+enable=false
+

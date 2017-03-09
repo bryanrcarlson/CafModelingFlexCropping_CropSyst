@@ -1,0 +1,29 @@
+[rotation]
+description=Winter Wheat - Spring fallow - Winter canola - Spring fallow.  Conventional tillage management for low precipitation similar to Lind, WA
+years=4
+sowing:count=2
+[sowing:1]
+event_synchronization=relative_date
+event_date=0000244 (Sep 1)
+enabled=true
+checked=true
+description=Winter wheat- Sowing date was come from Dr. Stockle email at Thursday, July 26, 2012 
+NRCS_field_op=
+crop=../Crop/wheat_winter-low.crp
+management=../Management/wheat_winter-low.mgt
+seeding_rate=300.0000000000 Seed application rate
+emergence_rate=100.0000000000 Emergence rate
+sowing_depth=5.0000000000 Sowing depth
+
+[sowing:2]
+event_synchronization=relative_date
+event_date=0002227
+enabled=true
+checked=true
+description=Winter canola- Sowing date was come from Dr. Stockle email at Thursday, July 26, 2012 
+NRCS_field_op=
+crop=../Crop/canola_winter-low.crp
+management=../Management/canola_winter-low.mgt
+seeding_rate=300.0000000000 Seed application rate
+emergence_rate=100.0000000000 Emergence rate
+sowing_depth=5.0000000000 Sowing depth

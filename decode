@@ -1,0 +1,7 @@
+[anthrome_4]
+11=annual/stable
+12=transition/stable
+13=grain-fallow/stable
+111=annual/dynamic
+112=transition/dynamic
+113=grain-fallow/dynamic

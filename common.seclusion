@@ -1,0 +1,19 @@
+# For this project we are not composing anything from the master database
+# the following line will handle Windows style root directories - C:\Simulation\Database\
+- /Simulation/Database/
++ Simulation/
+- Soil/
+- Rotation/
+- Crop/
+- Management/
+- Weather/
+- CO2/
+- collate/
+- Output/
+# In this project UED files are excluded because the location is specified in template scenario directory names
+# - *.UED
+- install.sh
+- install_from_NAS2.sh
+- download*.bat
+- readme.txt
+#don't include all files rule as this is provided by the generator

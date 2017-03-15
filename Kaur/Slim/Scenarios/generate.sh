@@ -1,1 +1,1 @@
-../../../Scenarios/generate.sh
+../../../ScenariosAnthrome/generate.sh

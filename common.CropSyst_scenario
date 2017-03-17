@@ -12,27 +12,28 @@ enable=false
 cropping_mode=rotation
 rotation=<provided by generator>
 [H2O]
+recalibrate_date=0 (Date omitted)
 units=m H2O/m soil
-1=0.20000000
-2=0.20000000
-3=0.20000000
-4=0.20000000
-5=0.20000000
-6=0.20000000
-7=0.20000000
-8=0.20000000
-9=0.20000000
-10=0.20000000
-11=0.20000000
-12=0.20000000
-13=0.20000000
-14=0.20000000
-15=0.20000000
-16=0.20000000
-17=0.20000000
-18=0.20000000
-19=0.20000000
-20=0.20000000
+1=0.08000000
+2=0.08000000
+3=0.08000000
+4=0.08000000
+5=0.08000000
+6=0.08000000
+7=0.08000000
+8=0.08000000
+9=0.08000000
+10=0.08000000
+11=0.08000000
+12=0.08000000
+13=0.08000000
+14=0.08000000
+15=0.08000000
+16=0.08000000
+17=0.08000000
+18=0.08000000
+19=0.08000000
+20=0.08000000
 
 [NO3]
 recalibrate_date=0 (Date omitted)
@@ -80,6 +81,17 @@ units=kg/ha
 18=0.00000000
 19=0.00000000
 20=0.00000000
+[initial_residue]
+reset_residue=false
+stubble_biomass=0.104 Surface standing stubble biomass Residue
+stubble_biomass_units=kg/m²
+stubble_biomass_units_shown=kg/m²
+surface_biomass=0.936 Surface biomass Residue
+surface_biomass_units=kg/m²
+surface_biomass_units_shown=kg/m²
+incorporated_biomass=0.00000000 Incorporated biomass (obsolete V4.4.1) Residue
+incorporated_biomass_units=kg/m²
+incorporated_biomass_units_shown=kg/m²
 
 [organic_matter_decomposition]
 microbial_biomass_decomposition_constant=0.00500000

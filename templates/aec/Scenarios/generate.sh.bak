@@ -1,0 +1,3 @@
+target_dir=$(date +"%y-%m-%d")
+generator --verbose --target=$target_dir --template=template --decode=decode
+#--response=generator.response

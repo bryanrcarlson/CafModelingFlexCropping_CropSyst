@@ -1,1 +1,0 @@
-../../../ScenariosAnthrome/generate.sh

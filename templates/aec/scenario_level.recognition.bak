@@ -1,0 +1,8 @@
+# The following are directories that occur in the database(s) but should not be considered scenario levels
+# Although this file resembles an seclusion file is is not used to search the directory structure
+# for potential scenarios, it definitively identifies what are actually scenarios.
+
+- Simulation
+
++ *
+

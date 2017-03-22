@@ -1,1 +1,0 @@
-../../../ScenariosSimple/generate.sh

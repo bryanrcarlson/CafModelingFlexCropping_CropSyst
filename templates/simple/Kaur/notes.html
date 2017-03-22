@@ -1,0 +1,36 @@
+<H1>Subproject specialiations for Harsimran's thesis</H1>
+
+This subproject provides simulation control that 
+that will allow Harsimran to emulate using the tool 
+for different years.
+<P>
+One of the features of the tool is the sowing date can be selected 
+by the CropSyst model.
+In the actual use of the tool the simulation will be run for the current real year.
+<P>
+In order to evaluate the sowing date selection 
+Harsimran will need to emulate the 'current' year.
+This can be accomplished by running the simulation with 
+years selected to have representitive climatic conditions.
+(I.e. where the 'current' year may be either warm or cool
+such that the sowing date will noticably vary.)
+
+<H2>Emulating the current year</H2>
+
+The simulation start date is specified in simulation control
+(.CS_control)
+To allow the scenario generator to automatically apply alternate
+'current' years, a <B>Simulation/Control</B> sub directory is added to the <B>Database</B>
+directory created for the subproject.
+In this directory a .CS_control file would be added for each desired
+test climate (year).  These file can have any name.
+
+<H3>Database/Simulation (Kaur subproject only) </H3>
+
+The Database/Simulation folder contains subdirectories with generation fragments.
+Because these fragments are under the Database folder they will be used for
+combinatorial generation (Each subdirectory constitutes an scenario level).
+<P>
+Kaur/Database/Simulation provides additional Simulation generation fragments 
+to allow the emulation of representative 'current' years.
+This would not be applicable for the general use of the Flex Cropping tool.

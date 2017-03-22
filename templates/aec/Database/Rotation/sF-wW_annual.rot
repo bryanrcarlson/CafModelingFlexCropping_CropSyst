@@ -1,0 +1,39 @@
+[rotation]
+details_URL=
+description=Winter Wheat - Spring fallow.  Conventional tillage management for low precipitation similar to Lind, WA
+end_year=2016
+years=2
+sowing:count=1
+[version]
+major=4
+release=18
+minor=4
+[sowing:1]
+ID=2016195.3103113095 (default)
+res_set_ID=0
+contingency=none
+operation_type=
+operation_name=
+operation_filename=
+enable_for_model=secondary_only
+event_synchronization=actual_date
+event_date=1274 (0001/10/1 (actual date))
+checked=true
+enabled=true
+description=crop:wheat_winter-low.crp | management:wheat_winter-high.mgt
+name=
+start_hour=0 Start hour
+duration=6 Duratation
+OP_ID=0
+carbon_footprint=0.00000000
+terminate_crop=true
+NRCS_field_op=
+SCS_code=0
+LAND_USE_ID=0
+MGT_ID=0
+crop=../Crop/wheat_winter-low.crp
+management=../Management/wheat_winter-high.mgt
+seeding_rate=300.00000000 Seed application rate
+emergence_rate=100.00000000 Emergence rate
+sowing_depth=5.00000000 Sowing depth
+date=1274 (0001/10/1 (actual date))

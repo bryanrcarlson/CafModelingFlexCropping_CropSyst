@@ -1,4 +1,4 @@
-[03/22/2017]
+## 03/22/2017
 * /
 	* FlexCropping project folder; future home of the decision support tool including realtime updating, etc
 * backups/

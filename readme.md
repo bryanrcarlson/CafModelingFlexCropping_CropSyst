@@ -9,5 +9,7 @@
 	* Not included in repo
 * Kaur
 	* Project folder for Harsimran Kaur's thesis; model assessment including corroboration (psuedo validation), verification, and other runs for testing/output
-* templates
-	* Project template directories - these will replace the "Kaur" directory
+* template-aec
+	* Project template directory - specifies cropping ssytems unique to aec
+* template-simple
+	* Project template directory - cropping system is same across region

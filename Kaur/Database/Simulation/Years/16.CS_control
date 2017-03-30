@@ -1,3 +1,2 @@
-[simulation]
-extend_available_weather=true
-substitute_year_offset=-16
+[weather_substitution]
+year_offset=16

@@ -37,9 +37,8 @@ if [ ! -d $Database_Years ]; then
   mkdir -p $Database_Years
   for year in $(seq 0 29); do
     year_file=$Database_Years/$year.CS_control
-    echo "[simulation]" > $year_file
-	  echo "extend_available_weather=true" >> $year_file
-	  echo "substitute_year_offset=-"$year >> $year_file
+	echo "[weather_substitution]" > $year_file
+	echo "year_offset="$year >> $year_file
   done
 fi
 

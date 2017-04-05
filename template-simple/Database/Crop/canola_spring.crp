@@ -91,7 +91,7 @@ seedling_leaf_area=2.00000000 Leaf area of seedling on first day of emergence
 mean_base_soil_water_pot=-1000.00000000 Mean base soil water potential for 50% emergence
 stdev_base_soil_water_pot=100.00000000 Std deviation base soil water potential ?for 50% emergence?
 [hardiness]
-enabled=true
+enabled=false
 damage_cold_temp=-20.00000000 Cold temperature which begins to damage the plant (leaves)
 lethal_cold_temp=-40.00000000 Cold temperature which is lethal to the plant (leaves)
 salvageable_deg_day=1300 Thermal time at which grain filling may continue after lethal frost
@@ -161,11 +161,11 @@ full_senescence=1501.00000000 Full senescence (thermal time)
 tuber_init=1000 Tuber initiation
 max_root_depth=560 Maximum root depth
 rapid_fruit_growth=1300.00000000 Begin rapid fruit growth
-resolution=daily
+resolution=hourly
 base_temp=3.00000000 Base temperature
-cutoff_temp=22.00000000 Cutoff temperature
-optimal_temp=22.00000000 Optimal temperature
-maximum_temp=35.00000000 Maximum temperature
+cutoff_temp=25.00000000 Cutoff temperature
+optimal_temp=26.00000000 Optimal temperature
+maximum_temp=40.00000000 Maximum temperature
 [root]
 initial_depth=0.20000000
 root_sensitivity_water_stress=0.00000000 Root sensitivity to water stress

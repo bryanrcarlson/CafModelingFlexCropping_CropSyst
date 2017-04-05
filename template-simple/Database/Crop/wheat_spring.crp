@@ -155,8 +155,8 @@ tuber_init=1000 Tuber initiation
 max_root_depth=820 Maximum root depth
 rapid_fruit_growth=1300.00000000 Begin rapid fruit growth
 resolution=hourly
-base_temp=0.00000000 Base temperature
-cutoff_temp=23.00000000 Cutoff temperature
+base_temp=3.00000000 Base temperature
+cutoff_temp=25.00000000 Cutoff temperature
 optimal_temp=26.00000000 Optimal temperature
 maximum_temp=40.00000000 Maximum temperature
 [root]

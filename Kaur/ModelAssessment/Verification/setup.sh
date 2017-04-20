@@ -9,5 +9,5 @@ chmod uga+rwx generate.sh
 cp -r ../../../Scenarios/rotations rotations
 popd
 
-ln -s ../../Dbfs/wsu-research-sites.dbf wsu-research-sites.dbf
-chmod uga+rwx wsu-research-sites.dbf
+ln -s ../../Dbfs/verification_10.dbf verification_10.dbf
+chmod uga+rwx verification_10.dbf

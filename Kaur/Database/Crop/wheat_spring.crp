@@ -54,7 +54,7 @@ TUE_equation=TUE_curve
 RUE_basis=global_radiation
 TUE_scaling_coef=0.55000001 Scaling coefficient of TUE regression (power function)
 TUE_scaling_coef_veg=0.44999999 Scaling coefficient of TUE regression (power function)
-TUE_at_1pKa_VPD=4.50000019 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
+TUE_at_1pKa_VPD=5.00000000 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
 TUE_at_1pKa_VPD_veg=5.00000000 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
 water_productivity=5.00000000 Water productivity FAO AquaCrop water productivity during reproductive growth (or throughout the season depending on the WUE mode)
 water_productivity_veg=5.00000000 Water productivity as in AquaCrop
@@ -161,7 +161,7 @@ optimal_temp=26.00000000 Optimal temperature
 maximum_temp=40.00000000 Maximum temperature
 [root]
 initial_depth=0.20000000
-root_sensitivity_water_stress=0.30000001 Root sensitivity to water stress
+root_sensitivity_water_stress=0.40000001 Root sensitivity to water stress
 max_root_depth=1.50000000 Maximum root depth
 surface_root_density=3.00000000 Maximum surface root density at full rooting depth
 root_density_distribution_curvature=0.01000000 Curvature of root density distribution

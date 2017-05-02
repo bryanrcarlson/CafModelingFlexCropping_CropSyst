@@ -142,7 +142,7 @@ rel_TT_at_half_CC_max=0.50000000 Relative thermal time at half maximum canopy co
 [phenology]
 maturity_significant=true
 clipping_resets=false
-emergence=200 Emergence
+emergence=100 Emergence
 flowering=660 Begin flowering
 peak_LAI=560 End canopy growth
 filling=790 Begin filling (seed filling, or orchard fruit filling, or tuber bulking)

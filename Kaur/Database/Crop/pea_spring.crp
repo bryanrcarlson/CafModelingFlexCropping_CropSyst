@@ -75,11 +75,11 @@ max_canopy_height=1.50000000 Maximum plant height
 unstressed=0.44999999 Unstressed harvest index
 flowering_sensitivity=0.00000000 Sensitivity to water and nitrogen stress during flowering
 translocation_max=0.30000001  Biomass translocation to grain fraction (max)
-filling_sensitivity=0.10000000 filling/bulking Sensitivity to water and nitrogen stress
+filling_sensitivity=0.00000000 filling/bulking Sensitivity to water and nitrogen stress
 filling_duration=1 Duration of grain filling period (unstressed)
 temperature_stress_sensitivity=1.00000000 Sensitivity to temperature stress during flowering
 adjust_HI=true
-heat_extreme=false
+heat_extreme=true
 [emergence]
 model=thermal_time
 a=20.00000000 a slope? for hydrothermal time constant curve Emperical constant

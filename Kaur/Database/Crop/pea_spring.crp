@@ -79,7 +79,7 @@ filling_sensitivity=0.00000000 filling/bulking Sensitivity to water and nitrogen
 filling_duration=1 Duration of grain filling period (unstressed)
 temperature_stress_sensitivity=1.00000000 Sensitivity to temperature stress during flowering
 adjust_HI=true
-heat_extreme=true
+heat_extreme=false
 [emergence]
 model=thermal_time
 a=20.00000000 a slope? for hydrothermal time constant curve Emperical constant

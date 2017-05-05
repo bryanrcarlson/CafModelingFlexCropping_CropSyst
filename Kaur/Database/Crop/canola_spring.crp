@@ -72,7 +72,7 @@ LWP_stops_canopy_expansion=-1200.00000000 Leaf water potential that stops canopy
 [morphology]
 max_canopy_height=1.50000000 Maximum plant height
 [harvest_index]
-unstressed=0.34999999 Unstressed harvest index
+unstressed=0.30 Unstressed harvest index
 flowering_sensitivity=0.20000000 Sensitivity to water and nitrogen stress during flowering
 translocation_max=0.20000000  Biomass translocation to grain fraction (max)
 filling_sensitivity=0.00000000 filling/bulking Sensitivity to water and nitrogen stress

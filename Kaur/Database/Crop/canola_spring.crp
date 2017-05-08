@@ -214,7 +214,7 @@ value=5.00000
 [grain_stress_period:1]
 event_synchronization=after_normal_crop_growth_stage
 event_offset=1
-event_phenologic=filling
+event_phenologic=flowering
 reschedule=no
 checked=true
 enabled=true

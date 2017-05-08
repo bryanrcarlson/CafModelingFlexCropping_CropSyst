@@ -21,8 +21,8 @@ land_use=SMALL_GRAIN
 season_dormancy_mode=single
 canopy_growth=leaf_area_index_V5
 linger=90 Time that senesced leaves linger with the plant
-adjustment:count=1
-grain_stress_period:count=2
+adjustment:count=0
+grain_stress_period:count=1
 [water_use_efficiency]
 season2_adj=1.00000000
 season3_adj=1.00000000
@@ -72,9 +72,9 @@ LWP_stops_canopy_expansion=-1200.00000000 Leaf water potential that stops canopy
 [morphology]
 max_canopy_height=1.50000000 Maximum plant height
 [harvest_index]
-unstressed=0.33000001 Unstressed harvest index
+unstressed=0.30000001 Unstressed harvest index
 flowering_sensitivity=0.80000001 Sensitivity to water and nitrogen stress during flowering
-translocation_max=0.10000000  Biomass translocation to grain fraction (max)
+translocation_max=0.05000000  Biomass translocation to grain fraction (max)
 filling_sensitivity=0.00000000 filling/bulking Sensitivity to water and nitrogen stress
 filling_duration=1 Duration of grain filling period (unstressed)
 temperature_stress_sensitivity=1.00000000 Sensitivity to temperature stress during flowering
@@ -142,7 +142,7 @@ rel_TT_at_half_CC_max=0.50000000 Relative thermal time at half maximum canopy co
 [phenology]
 maturity_significant=true
 clipping_resets=false
-emergence=100 Emergence
+emergence=90 Emergence
 flowering=689 Begin flowering
 peak_LAI=560 End canopy growth
 filling=790 Begin filling (seed filling, or orchard fruit filling, or tuber bulking)
@@ -202,15 +202,6 @@ min_factor=0.00000000 Minimum vernalization factor
 consideration=none
 unconstrain=0.00000000 development is not constrained Day length (photo-period)
 stop=11.00000000 development is stopped Day length (photo-period)
-[adjustment:1]
-event_synchronization=after_normal_crop_growth_stage
-event_offset=1
-event_phenologic=filling
-reschedule=no
-checked=false
-enabled=true
-parameter=Transpiration Use Efficiency when VPD is at 1kPa [TUE_at_1pKa_VPD]
-value=5.00000
 [grain_stress_period:1]
 event_synchronization=after_normal_crop_growth_stage
 event_offset=1
@@ -227,21 +218,4 @@ heat_stress_no_stress_threshold_temperature=32.00000000
 heat_stress_max_stress_threshold_temperature=38.00000000
 heat_stress_sensitivity=1.00000000
 heat_stress_exposure_damaging_hours=2.00000000
-heat_stress_exposure_initial_hour=6
-[grain_stress_period:2]
-event_synchronization=after_normal_crop_growth_stage
-event_offset=1
-event_phenologic=filling
-reschedule=no
-checked=true
-enabled=true
-cold_stress_no_stress_threshold_temperature=5.00000000
-cold_stress_max_stress_threshold_temperature=-2.00000000
-cold_stress_sensitivity=1.00000000
-cold_stress_exposure_damaging_hours=5.00000000
-cold_stress_exposure_initial_hour=0
-heat_stress_no_stress_threshold_temperature=32.00000000
-heat_stress_max_stress_threshold_temperature=38.00000000
-heat_stress_sensitivity=1.00000000
-heat_stress_exposure_damaging_hours=2.00000000
-heat_stress_exposure_initial_hour=6
+heat_stress_exposure_initial_hour=99

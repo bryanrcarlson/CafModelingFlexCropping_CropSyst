@@ -3,7 +3,7 @@ rotation_cycling=false
 start_date=2015213 
 stop_date=2015273
 [weather_substitution]
-year_base=1981 
+year_base=1980
 [output]
 run_time_graph=true
 display_profile=false

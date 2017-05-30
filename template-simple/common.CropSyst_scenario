@@ -15,8 +15,6 @@ cropping_mode=rotation
 rotation=<provided by generator>
 
 [H2O]
-recalibrate_date=0 (Date omitted)
-units=m H2O/m soil
 moisture=dry
 
 [NO3]

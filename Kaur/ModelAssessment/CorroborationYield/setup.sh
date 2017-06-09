@@ -9,8 +9,8 @@ chmod uga+rwx generate.sh
 cp -r ../../../Scenarios/rotations rotations
 popd
 
-ln -s ../../Dbfs/corroboration_locations_74.dbf corroboration_locations_74.dbf
-chmod uga+rwx corroboration_locations_74.dbf
+ln -s ../../Dbfs/corroboration_locations_72.dbf corroboration_locations_72.dbf
+chmod uga+rwx corroboration_locations_72.dbf
 
 if [ ! -f "scenario_level.recognition" ]; then
 	echo "+ emulate" >> scenario_level.recognition

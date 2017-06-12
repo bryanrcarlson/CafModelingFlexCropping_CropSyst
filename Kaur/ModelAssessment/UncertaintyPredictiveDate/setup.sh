@@ -5,8 +5,15 @@ if [ ! -d "Scenarios" ]; then
 fi
 pushd Scenarios
 ln -s ../../../Scenarios/generate.sh generate.sh
-chmod uga+rwx generate.sh
-cp -r ../../../Scenarios/rotations rotations
+#chmod uga+rwx generate.sh
+#cp -r ../../../Scenarios/rotations rotations
+mkdir rotations
+    pushd rotations
+    mkdir sC-wW
+    mkdir sF-wW
+    mkdir sP-wW
+    mkdir sW-wW
+    popd
 popd
 
 ln -s ../../Dbfs/verification_10.dbf verification_10.dbf

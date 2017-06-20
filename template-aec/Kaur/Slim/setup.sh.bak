@@ -1,7 +1,0 @@
-# Setup for linux
-mkdir Scenarios
-pushd Scenarios
-ln -s ../../../Scenarios/generate.sh generate.sh
-chmod uga+rwx generate.sh
-cp -r ../../../Scenarios/anthrome anthrome
-popd

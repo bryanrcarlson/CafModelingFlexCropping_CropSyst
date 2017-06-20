@@ -1,3 +1,12 @@
 *-*-*
+Database/
+Scenarios/
 /backups
 /Database
+/Kaur/ModelAssessment/**/Database*
+/Kaur/ModelAssessment/**/Database
+/Kaur/ModelAssessment/**/*.dbf
+/Kaur/ModelAssessment/**/*.recognition
+/Kaur/ModelAssessment/**/*.CS_control
+Database/
+Scenarios/

@@ -3,6 +3,7 @@
 if [ ! -d "Scenarios" ]; then
     mkdir Scenarios
 fi
+if [ ! -d "Scenarios" ]; then
 pushd Scenarios
     ln -s ../../../Scenarios/generate.sh generate.sh
     #chmod uga+rwx generate.sh
@@ -15,6 +16,7 @@ pushd Scenarios
         #mkdir sW-wW
     popd
 popd
+fi
 
 # Create scenario files
 if [ ! -d "Database" ]; then

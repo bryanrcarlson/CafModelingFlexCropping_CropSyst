@@ -54,8 +54,8 @@ TUE_equation=TUE_curve
 RUE_basis=global_radiation
 TUE_scaling_coef=0.50000000 Scaling coefficient of TUE regression (power function)
 TUE_scaling_coef_veg=0.44999999 Scaling coefficient of TUE regression (power function)
-TUE_at_1pKa_VPD=5.00000000 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
-TUE_at_1pKa_VPD_veg=5.00000000 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
+TUE_at_1pKa_VPD=5.50000000 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
+TUE_at_1pKa_VPD_veg=5.50000000 Transpiration Use Efficiency when VPD is at 1kPa when VPD is at 1kPa
 water_productivity=5.00000000 Water productivity FAO AquaCrop water productivity during reproductive growth (or throughout the season depending on the WUE mode)
 water_productivity_veg=5.00000000 Water productivity as in AquaCrop
 RUE_global=2.59999990 Total radiation basis RUE
@@ -72,9 +72,9 @@ LWP_stops_canopy_expansion=-1200.00000000 Leaf water potential that stops canopy
 [morphology]
 max_canopy_height=1.50000000 Maximum plant height
 [harvest_index]
-unstressed=0.30000001 Unstressed harvest index
+unstressed=0.35 Unstressed harvest index
 flowering_sensitivity=0.80000001 Sensitivity to water and nitrogen stress during flowering
-translocation_max=0.05000000  Biomass translocation to grain fraction (max)
+translocation_max=0.15000000  Biomass translocation to grain fraction (max)
 filling_sensitivity=0.00000000 filling/bulking Sensitivity to water and nitrogen stress
 filling_duration=14 Duration of grain filling period (unstressed)
 temperature_stress_sensitivity=1.00000000 Sensitivity to temperature stress during flowering

@@ -8,3 +8,5 @@
 	* Project folder for Harsimran Kaur's thesis; model assessment including corroboration (psuedo validation), verification, and other runs for testing/output
 * template
 	* Project template directory - a mirror of Kaur directory prior to running setup scripts.  For new setups, it is advised to copy/paste the template directory, rename it, and run setup.sh scripts starting at the higher directory level and moving to a specific scenario directory.
+* scripts
+	* Scripts relating to collating output and other helper utils

@@ -50,6 +50,7 @@ fi
  # specifying the desired dates.
  # The following code assumes the path to CS_Suite_5 is in the PATH environment variable
 
+
 # Specify DBF file to use
-ln -s Dbfs/all_dryland.dbf all_dryland.dbf
-chmod uga+rwx all_dryland.dbf
+ln -s Dbfs/aec_dryland.dbf aec_dryland.dbf
+chmod uga+rwx aec_dryland.dbf

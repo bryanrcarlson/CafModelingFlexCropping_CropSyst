@@ -15,7 +15,6 @@ popd
 fi
 
 if [ ! -d "Database" ]; then
-    #TODO: Create emulate and preclude files (need to add more here...)
     mkdir Database
     pushd Database
         mkdir Simulation

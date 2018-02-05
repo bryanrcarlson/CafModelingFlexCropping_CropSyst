@@ -1,9 +1,12 @@
 #!/bin/bash
 # Setup for linux
+
 if [ ! -d "Scenarios" ]; then
+    echo "## Downloading Scenario files..."
     #mkdir Scenarios
     svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/Scenarios Scenarios
 fi
+
 if [ ! -d "Scenarios" ]; then
 pushd Scenarios
     chmod uga+rwx generate.sh
@@ -19,6 +22,7 @@ fi
 
 # Create database files
 if [ ! -d "Database" ]; then
+    echo "## Creating database files..."
     #mkdir Database
     svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/Database Database
     pushd Database
@@ -52,7 +56,8 @@ fi
 
 # Get soil data
 if [ ! -L Database/Soil ]; then
-   svn export svn://nas2.bsyse.wsu.edu/Projects/REACCH2/trunk/Simulation/Database/Soil Database/Soil
+    echo "## Downloading soil data..."
+    svn export svn://nas2.bsyse.wsu.edu/Projects/REACCH2/trunk/Simulation/Database/Soil Database/Soil
 fi
 
 # Create Simulation control fragments to tell CropSyst to uses historical years
@@ -60,8 +65,10 @@ fi
 # These files will be used in generation composition.
 Database_Years=Database/Simulation/Years
 if [ ! -d $Database_Years ]; then
+    echo "## Creating weather_substition files..."
   mkdir -p $Database_Years
-  for year in $(seq 0 29); do
+  for year in {0..29} 
+  do
     year_file=$Database_Years/$year.CS_control
 	echo "[weather_substitution]" > $year_file
 	echo "year_offset="$year >> $year_file
@@ -69,6 +76,7 @@ if [ ! -d $Database_Years ]; then
 fi
 
 # Copy simulation controls
+echo "## Downloading simulation control files..."
 svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/all.FMT
 chmod uga+rwx all.FMT
 
@@ -96,3 +104,5 @@ if [ ! -f "scenario_level.recognition" ]; then
 	echo "- Simulation" >> scenario_level.recognition
 	echo "+ *" >> scenario_level.recognition
 fi
+
+echo "## Finished"

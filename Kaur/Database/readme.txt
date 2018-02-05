@@ -1,0 +1,2 @@
+## 02/02/2018
+* Files included in this directory have been elevated to being used by the decision support tool.  As of this date, there are no differences between these files and those located in the Database dir at the root project dir.  These are left for archival purposes but should not be references.  This should not be an issue since we do not plan on making any changes to "Kaur" related projects.  The "Kaur" project has concluded.

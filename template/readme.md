@@ -1,0 +1,4 @@
+## 02/05/2018
+This folder contains template files for various (sub)projects.  The folder structure is relative to the root project structure (../).  When running on a new environment, the template folder with related project files should be copied to the root.  The "setup.sh" or "setup.bat" file should be copied to the relative path (outside of the template directory, but mirroring the template dir structure).  The project should be built fresh from the "startup.sh" or "startup.bat" files.
+
+For example, to set up the main DSS run, copy "template" and all files and folders that are not sub-projects.  Then copy "template/setup.sh" to same dir level as "template" dir.  Run "setup.h" - this will copy Database, etc outside of template.

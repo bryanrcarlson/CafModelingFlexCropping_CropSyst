@@ -93,7 +93,7 @@ svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/te
 chmod uga+rwx scenario_level.recognition
 
 # Specify locations to be simulated
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/Dbfs/aec_dryland.dbf aec_dryland.dbf
+svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/Dbfs/aec_dryland.dbf
 chmod uga+rwx aec_dryland.dbf
 
 # config scenario

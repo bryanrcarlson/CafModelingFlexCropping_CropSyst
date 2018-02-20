@@ -6,7 +6,7 @@ if [ ! -d "Database" ]; then
     mkdir Database
 fi
 
-echo "## Fore downloading database files..."
+echo "## Downloading database files..."
 
 
 pushd Database
@@ -19,6 +19,7 @@ pushd Database
 popd
 
 # TODO: Run weather generator, or get latest weather files somehow
+echo "## WARNING: Weather not downloaded"
 
 # Get soil data
 echo "## Downloading soil data..."
@@ -38,26 +39,5 @@ if [ ! -d $Database_Years ]; then
 	echo "year_offset="$year >> $year_file
   done
 fi
-
-# Copy simulation controls
-echo "## Downloading simulation control files..."
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/all.FMT --force
-chmod uga+rwx all.FMT
-
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/common.CropSyst_scenario --force
-chmod uga+rwx common.CropSyst_scenario
-
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/common.seclusion --force
-chmod uga+rwx common.seclusion
-
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/model_options.CS_control --force
-chmod uga+rwx model_options.CS_control
-
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/scenario_level.recognition --force
-chmod uga+rwx scenario_level.recognition
-
-# Specify locations to be simulated
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/Dbfs/aec_dryland.dbf --force
-chmod uga+rwx aec_dryland.dbf
 
 echo "## Finished"

@@ -25,6 +25,21 @@ echo "## Downloading dbf file..."
 svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/Dbfs/aec_dryland.dbf
 chmod uga+rwx aec_dryland.dbf
 
+svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/all.FMT --force
+chmod uga+rwx all.FMT
+
+svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/common.CropSyst_scenario --force
+chmod uga+rwx common.CropSyst_scenario
+
+svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/common.seclusion --force
+chmod uga+rwx common.seclusion
+
+svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/model_options.CS_control --force
+chmod uga+rwx model_options.CS_control
+
+svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/scenario_level.recognition --force
+chmod uga+rwx scenario_level.recognition
+
 echo "## Writing CS control files"
 echo "[simulation]" > simulation_date.Cs_control
 echo "rotation_cycling=false" > simulation_date.Cs_control

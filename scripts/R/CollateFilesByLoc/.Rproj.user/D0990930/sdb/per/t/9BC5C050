@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "setwd(\"C:\\\\OneDrive\\\\OneDrive - Washington State University (email.wsu.edu)\\\\Projects\\\\CafModelingFlexCropping\\\\Methods\\\\ModelAssessment\\\\RegionalRunLessPreclude\\\\Scenarios\\\\17-06-30\\\\seasonByLoc\")\n\nued <- \"season\" #met, soil\n\nfile.pattern <- paste(ued,\"_*\", sep = \"\")\nfiles <- list.files(pattern=file.pattern)\n                    \n#CHECK #files <- list.files(pattern=\"met_*\")\n#CHECK #files <- list.files(pattern=\"soil_*\")\ndf <- data.frame()\n\nfor(f in 1:length(files)){\n  print(cat(\"Processing: \", files[f], sep = \"\"))\n  \n  rot <- strsplit(files[f], \"_\")[[1]][2]\n  if(tolower(rot) == \"sc\") { rot = \"sC-wW\" }\n  if(tolower(rot) == \"sw\") { rot = \"sW-wW\" }\n  if(tolower(rot) == \"sp\") { rot = \"sP-wW\" }\n  \n  loc <- gsub('.dat','',strsplit(files[f], \"_\")[[1]][3])\n  f.path <- paste(getwd(), files[f], sep = \"\\\\\")\n  \n  if(ued == \"season\")\n  {\n    cols <- c(rep(\"character\", 5), rep(\"numeric\",11), rep(\"character\",2), \"integer\", rep(\"character\", 2), \"integer\")\n  }\n  else if(ued == \"met\")\n  {\n    cols <- c(\"integer\", \"NULL\", \"numeric\", rep(\"character\",2), \"integer\", rep(\"character\", 3))\n  }\n  else if(ued == \"soil\")\n  {\n    cols <- c(\"integer\", rep(\"numeric\",3), rep(\"character\",2), \"integer\", rep(\"character\", 2), \"integer\")\n  }\n  else\n  {\n    stop()\n  }\n  \n  f.df <- read.table(files[f], header=TRUE,sep=\"\\t\", colClasses = cols)\n  \n  if(nrow(f.df) > 0)\n  {\n    f.df$rotation = rot\n    f.df$location = loc\n    \n    df <- rbind(df, f.df)\n  }\n}\nfoo <- cat(ued, \"_all.dat\", sep = \"\")\n\noutfile <- paste(ued, \"_all.dat\", sep = \"\")\nwrite.table(df, outfile, sep = \"\\t\", row.names = FALSE)\n\n#write.table(df, \"season_all.dat\", sep = \"\\t\", row.names = FALSE)\n#CHECK #write.table(df, \"met_all.dat\", sep = \"\\t\", row.names = FALSE)\n#CHECK #write.table(df, \"soil_all.dat\", sep = \"\\t\", row.names = FALSE)",
+    "created" : 1499277743596.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "405277470",
+    "id" : "9BC5C050",
+    "lastKnownWriteTime" : 1499806436,
+    "last_content_update" : 1499806436540,
+    "path" : "C:/Drive/Files/Projects/CafModelingFlexCropping/Methods/R/CollateFilesByLoc/collate.R",
+    "project_path" : "collate.R",
+    "properties" : {
+        "docOutlineVisible" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

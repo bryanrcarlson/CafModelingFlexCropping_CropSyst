@@ -1,0 +1,195 @@
+---
+title: "CropSyst calibration - spring canola"
+output: html_notebook
+---
+
+
+## Set up script
+```{r}
+library(ggplot2)
+library(plyr)
+
+
+
+setwd("C:\\Drive\\Files\\Projects\\FlexCropping\\Methods\\R\\CalibrationSpringCanola")
+
+ggplotRegression <- function(path.obs, path.sim) {
+  require(ggplot2)
+  require(plyr)
+  
+  # Read data with observed yield
+  df.obs <- read.table(path.obs, sep="\t", header=TRUE)
+  
+  # Read data with simulated yield, only read required columns
+  columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+  df.sim <- read.table(path.sim, colClasses = columnClasses, sep="\t", header=TRUE)
+  
+  # Convert units (from/to?) and extract planting year from date
+  df.sim$yield <- df.sim$yield * 10000
+  df.sim$Year <- as.numeric(substring(df.sim$planting_date,0,4))
+  
+  # Merge sim and obs dataframes by location and  year
+  df <- merge(df.obs, df.sim, by=c("location", "Year"))
+  
+  # Rename yield columns for clarity
+  df <- rename(df, c("Yield"="yield.obs", "yield"="yield.sim"))
+  
+  # Graph sim vs obs
+  fit <- lm(yield.sim ~ yield.obs, data = df)
+  print(summary(fit))
+  ggplot(df, aes(x=df$yield.obs, y=df$yield.sim)) + 
+    geom_point(shape=1) +
+    geom_abline(slope=1) +
+    #geom_smooth(method='lm', se=TRUE) +
+    stat_smooth(method="lm", formula = y ~ x, size=1) +
+    coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+    labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+                       "Intercept =",signif(fit$coef[[1]],5 ),
+                       " Slope =",signif(fit$coef[[2]], 5),
+                       " P =",signif(summary(fit)$coef[2,4], 5)))
+}
+```
+
+## Comparing obs to sim runs on 17-04-21
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-21_season_all.dat")
+```
+
+## Obs vs 17-05-04
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/8b214bae593ace8f291cd766bc34a4fc81ef2091#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-04_season_all.dat")
+```
+
+## SC1 Adj LAI params
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/b2d3aab9dabf1c671f75b06ba12dab220c381eb9#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_1_season_all.dat")
+```
+
+## SC2 Adj HI
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/58e2f90e260282fa531b800b20f1e008939a9f16#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+```
+
+## SC3 Adj TUE
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/e729c39098aacbefd5bba7098fe237761e99a036#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_3_season_all.dat")
+```
+
+## SC4 Adj SLA and LAI
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/eb40dd9abb93855ef49fa028c964749cf853e468#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_4_season_all.dat")
+```
+
+## SC5: Increased TUE and HI stressors 
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/6333ea5683062ff34af80f17d2d33d958c24debc#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_5_season_all.dat")
+```
+
+## SC6: Reduced TUE and HI a bit
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/8e4f3555a4157f2e2890dd69ce23f4573232b42d#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_6_season_all.dat")
+```
+
+## SC7: Increased stressors
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/0ff1c05930f33bb1c8ab569eaf38986d6d44699c#diff-5bf50174d60077ff41a0967d09ac9250
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-08_7_season_all.dat")
+```
+  * That did nothing!! It's all lies!
+
+## SC8: Second attempt at stressors: https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/9a7c409eec586544a684040833f825d0a00a809b#diff-5bf50174d60077ff41a0967d09ac9250
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-08_8_season_all.dat")
+```
+  * Tried adjusting params twice, no effect!
+
+## SC9: Increased dd for emergence 90 -> 100
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/1b3737b5429bc3b8909d1ab7fe7b0e574ff08a03#diff-5bf50174d60077ff41a0967d09ac9250
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-08_9_season_all.dat")
+```
+
+## SC10: Rolled back emergence DD, and some stressors, decreased translocation factor and HI
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/e1775f1b00d69067b8897e5476534fc2e04a5af7#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-08_10_season_all.dat")
+```
+ 
+## SC11: flowering_sensitivity 0.8 -> 1
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/46acd8bb718353ce3fa0aa626627845847086919#diff-5bf50174d60077ff41a0967d09ac9250
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-08_11_season_all.dat")
+```
+  * No change!
+
+## SC12: Incrased time of filling from 1 day to 14
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/f1c2d010ef6cc8c6742cd04311a2c4fca9badc70#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-08_12_season_all.dat")
+```
+
+## SC13: root_sensitivity_water_stress 0.3 -> 1
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/180cb54e9d272c89e49cd244071ec9c146d4dc7e#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-09_13_season_all.dat")
+```
+  * CROPSYST!  
+
+## SC14: heat_stress_no_stress_threshold_temperature: 32 -> 30, heat_stress_max_stress_threshold_temperature: 38 -> 36
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/d8b21515c966289bee0a40e89e98d0261cd19861#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-09_14_season_all.dat")
+```
+  * Is it a problem with reading the crop file?  Is the file not getting saved or output not being overwritten?
+
+## SC15: specific_leaf_area 30 -> 28
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/4dda573a03f787c4849702b67a43346492c532de#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-09_15_season_all.dat")
+```
+  * Nope, SLA had an effect.  So CropSyst isn't responding to changes in stressors.  WHAT?!!!
+  
+## SC16: specific_leaf_area 28 -> 30; duration_stress_sensitivity 0.1 -> 1
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/39e6ff1373c7d352cfe7b77b439acdc8185f5bf1#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-09_16_season_all.dat")
+```
+
+## SC17: heat_stress_exposure_initial_hour 99 -> 1
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/24408f5f85209eb1e8e9a253a3a01fc200166c34#diff-8fb462d4d9caaeef85ac8a8f5a530157
+  * Testing whether "arbitrary" (setting above value to 99) breaks grain stress.  ... NOPE!
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-09_17_season_all.dat")
+```
+
+## SC18: Does grain_stress_period do anything?  checked, enabled from true->false; grain_stress_period:count 1->0
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/24408f5f85209eb1e8e9a253a3a01fc200166c34#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-09_18_season_all.dat")
+```
+  * So the effect is very small, but it is functioning.  It looks like having it implemented pulled a few points down towards the 1:1 line -- good!  Now, how to make that more significant?
+  
+## SC19: Increase time of flowering to make grain_stress_period more impactful.  filling: 790->1090. Also enabled grain stress.
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/8a23ec9132227c0f8ff78e065f03419c47f6ed71#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-09_19_season_all.dat")
+```
+
+## SC20: filling: 1090 -> 990
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/aab974900be9698c0c19b75b26e6632c0cb12bd1#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-09_20_season_all.dat")
+```
+
+## SC21: specific_leaf_area: 30->33
+https://github.com/bryanrcarlson/LtarModelingFlexCropping_CropSyst/commit/752eeaece4f88143c38074081875a2eb0c0f3f13#diff-8fb462d4d9caaeef85ac8a8f5a530157
+```{r}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-09_21_season_all.dat")
+```

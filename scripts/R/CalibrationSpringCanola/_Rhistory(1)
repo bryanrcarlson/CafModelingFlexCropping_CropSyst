@@ -1,0 +1,512 @@
+setwd("C:\\Drive\\Files\\Projects\\FlexCropping\\Methods\\R\\CalibrationSpringCanola")
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim <- read.table("Input\\17-05-04_season_all.dat", sep="\t", header=TRUE)
+df <- merge(df.obs, df.sim, by="location")
+print(df$yield)
+#df <- data.frame("yield.old" = df.old$yield, "yield.new" = df.new$yield, "rotation" = df.old$rotation)
+ggplot(df, aes(x=df$yield, y=df$Yield)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df.sim <- read.table("Input\\17-05-04_season_all.dat", sep="\t", header=TRUE)
+df.sim$planting_date
+a <- substring(df.sim$planting_date,7,10)
+a
+a <- substring(df.sim$planting_date,0,3)
+a
+a <- substring(df.sim$planting_date,0,4)
+a
+df.sim$Year <- substring(df.sim$planting_date,0,4)
+df.sim$Year
+df <- merge(df.obs, df.sim, by=c("location", "Year")
+print(df$yield)
+#df <- data.frame("yield.old" = df.old$yield, "yield.new" = df.new$yield, "rotation" = df.old$rotation)
+ggplot(df, aes(x=df$yield, y=df$Yield)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+# Spring canola
+df.sc <- subset(df, rotation == "sC-wW")
+ggplot(df.sc, aes(x=df.sc$yield.old, y=df.sc$yield.new)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+# Spring pea
+df.sp <- subset(df, rotation == "sP-wW")
+ggplot(df.sp, aes(x=df.sp$yield.old, y=df.sp$yield.new)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+ggplot(df, aes(x=df$yield, y=df$Yield)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+df[0]
+library(ggplot2)
+setwd("C:\\Drive\\Files\\Projects\\FlexCropping\\Methods\\R\\CalibrationSpringCanola")
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim <- read.table("Input\\17-05-04_season_all.dat", sep="\t", header=TRUE)
+df.sim$Year
+df.sim$Year <- substring(df.sim$planting_date,0,4)
+df.sim$Year
+df.obs$Year
+df.sim$Year <- as.numeric(substring(df.sim$planting_date,0,4))
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+df
+ggplot(df, aes(x=df$yield, y=df$Yield)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+library(ggplot2)
+setwd("C:\\Drive\\Files\\Projects\\FlexCropping\\Methods\\R\\CalibrationSpringCanola")
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim <- read.table("Input\\17-05-04_season_all.dat", sep="\t", header=TRUE)
+df.sim$Year <- as.numeric(substring(df.sim$planting_date,0,4))
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+ggplot(df, aes(x=df$yield, y=df$Yield)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", sep="\t", header=TRUE)
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim, by=c("location", "Year"))
+ggplot(df.old, aes(x=df.old$yield, y=df.old$Yield)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim, by=c("location", "Year"))
+ggplot(df.old, aes(x=df.old$yield, y=df.old$Yield)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim, by=c("location", "Year"))
+ggplot(df.old, aes(x=df.old$yield, y=df.old$Yield)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim, by=c("location", "Year"))
+ggplot(df.old, aes(x=df.old$Yield, y=df.old$yield)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+f.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim, by=c("location", "Year"))
+rename(df.old, c("Yield"="yield-obs", "yield"="yield-sim"))
+ggplot(df.old, aes(x=df.old$yield-obs, y=df.old$yield-sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim.old, by=c("location", "Year"))
+rename(df.old, c("Yield"="yield-obs", "yield"="yield-sim"))
+library(plyr)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", sep="\t", header=TRUE)
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim.old, by=c("location", "Year"))
+rename(df.old, c("Yield"="yield-obs", "yield"="yield-sim"))
+ggplot(df.old, aes(x=df.old$yield-obs, y=df.old$yield-sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim.old, by=c("location", "Year"))
+rename(df.old, c("Yield"="yield.obs", "yield"="yield.sim"))
+ggplot(df.old, aes(x=df.old$yield.obs, y=df.old$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+count(df.obs)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", sep="\t", header=TRUE)
+count(df.sim.old)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = c("character", "integer", rep("NULL", 4), "integer", "NULL", "character"), sep="\t", header=TRUE)
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = columnClasses, sep="\t", header=TRUE)
+columnClasses = c("character", "integer", rep("NULL", 4), "integer", "NULL", "character")
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = columnClasses, sep="\t", header=TRUE)
+columnClasses = c(rep("NULL", 2), "Date", rep("NULL", 8), "integer", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = columnClasses, sep="\t", header=TRUE)
+columnClasses = c(rep("NULL", 2), "Date", rep("NULL", 8), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = columnClasses, sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+columnClasses = c(rep("NULL", 2), "Date", rep("NULL", 8), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = columnClasses, sep="\t", header=TRUE)
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = columnClasses, sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim.old, by=c("location", "Year"))
+rename(df.old, c("Yield"="yield.obs", "yield"="yield.sim"))
+ggplot(df.old, aes(x=df.old$yield.obs, y=df.old$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = columnClasses, sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim.old, by=c("location", "Year"))
+rename(df.old, c("Yield"="yield.obs", "yield"="yield.sim"))
+# === Old Sim vs Obs ===
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = columnClasses, sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim.old, by=c("location", "Year"))
+df.old <- rename(df.old, c("Yield"="yield.obs", "yield"="yield.sim"))
+ggplot(df.old, aes(x=df.old$yield.obs, y=df.old$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE)
+ggplot(df.old, aes(x=df.old$yield.obs, y=df.old$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000))
+head(df.old)
+count(df.old)
+fit1 <- lm(yield.obs ~ yield.sim, data = df.old)
+summary(fit1)
+plot(yield.obs ~ yield.sim, data = df.old)
+abline(fit1)
+ggplot(df.old, aes(x=df.old$yield.obs, y=df.old$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+stat_smooth(method='lm', se=TRUE) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000))
+ggplot(df.old, aes(x=df.old$yield.obs, y=df.old$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000))
+ggplot(df.old, aes(x=df.old$yield.obs, y=df.old$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit.old)$adj.r.squared, 5),
+"Intercept =",signif(fit.old$coef[[1]],5 ),
+" Slope =",signif(fit.old$coef[[2]], 5),
+" P =",signif(summary(fit.old)$coef[2,4], 5)))
+fit.old <- lm(yield.obs ~ yield.sim, data = df.old)
+ggplot(df.old, aes(x=df.old$yield.obs, y=df.old$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit.old)$adj.r.squared, 5),
+"Intercept =",signif(fit.old$coef[[1]],5 ),
+" Slope =",signif(fit.old$coef[[2]], 5),
+" P =",signif(summary(fit.old)$coef[2,4], 5)))
+df.obs <- read.table("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", sep="\t", header=TRUE)
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim.old <- read.table("Input\\17-04-21_season_all.dat", colClasses = columnClasses, sep="\t", header=TRUE)
+df.sim.old$yield <- df.sim.old$yield * 10000
+df.sim.old$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+df.old <- merge(df.obs, df.sim.old, by=c("location", "Year"))
+df.old <- rename(df.old, c("Yield"="yield.obs", "yield"="yield.sim"))
+fit.old <- lm(yield.obs ~ yield.sim, data = df.old)
+ggplot(df.old, aes(x=df.old$yield.obs, y=df.old$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit.old)$adj.r.squared, 5),
+"Intercept =",signif(fit.old$coef[[1]],5 ),
+" Slope =",signif(fit.old$coef[[2]], 5),
+" P =",signif(summary(fit.old)$coef[2,4], 5)))
+ggplotRegression <- function(path.obs, path.sim) {
+require(ggplot2)
+require(plyr)
+# Read data with observed yield
+df.obs <- read.table(path.obs, sep="\t", header=TRUE)
+# Read data with simulated yield, only read required columns
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim <- read.table(path.sim, colClasses = columnClasses, sep="\t", header=TRUE)
+# Convert units (from/to?) and extract planting year from date
+df.sim$yield <- df.sim$yield * 10000
+df.sim$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+# Merge sim and obs dataframes by location and  year
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+# Rename yield columns for clarity
+df <- rename(df, c("Yield"="yield.obs", "yield"="yield.sim"))
+# Graph sim vs obs
+fit <- lm(yield.obs ~ yield.sim, data = df)
+ggplot(df, aes(x=df$yield.obs, y=df$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+"Intercept =",signif(fit$coef[[1]],5 ),
+" Slope =",signif(fit$coef[[2]], 5),
+" P =",signif(summary(fit)$coef[2,4], 5)))
+}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-21_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-04_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-20_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-20_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-20_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-21_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-20_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-21_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-20_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_1_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression <- function(path.obs, path.sim) {
+require(ggplot2)
+require(plyr)
+# Read data with observed yield
+df.obs <- read.table(path.obs, sep="\t", header=TRUE)
+# Read data with simulated yield, only read required columns
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim <- read.table(path.sim, colClasses = columnClasses, sep="\t", header=TRUE)
+# Convert units (from/to?) and extract planting year from date
+df.sim$yield <- df.sim$yield * 10000
+df.sim$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+# Merge sim and obs dataframes by location and  year
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+# Rename yield columns for clarity
+df <- rename(df, c("Yield"="yield.obs", "yield"="yield.sim"))
+# Graph sim vs obs
+fit <- lm(yield.obs ~ yield.sim, data = df)
+summary(fit)
+ggplot(df, aes(x=df$yield.obs, y=df$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+geom_smooth(method='lm', se=TRUE) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+"Intercept =",signif(fit$coef[[1]],5 ),
+" Slope =",signif(fit$coef[[2]], 5),
+" P =",signif(summary(fit)$coef[2,4], 5)))
+}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_1_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-21_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-04_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_1_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression <- function(path.obs, path.sim) {
+require(ggplot2)
+require(plyr)
+# Read data with observed yield
+df.obs <- read.table(path.obs, sep="\t", header=TRUE)
+# Read data with simulated yield, only read required columns
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim <- read.table(path.sim, colClasses = columnClasses, sep="\t", header=TRUE)
+# Convert units (from/to?) and extract planting year from date
+df.sim$yield <- df.sim$yield * 10000
+df.sim$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+# Merge sim and obs dataframes by location and  year
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+# Rename yield columns for clarity
+df <- rename(df, c("Yield"="yield.obs", "yield"="yield.sim"))
+# Graph sim vs obs
+fit <- lm(yield.obs ~ yield.sim, data = df)
+summary(fit)
+ggplot(df, aes(x=df$yield.obs, y=df$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+stat_smooth(method='lm', se=TRUE) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+"Intercept =",signif(fit$coef[[1]],5 ),
+" Slope =",signif(fit$coef[[2]], 5),
+" P =",signif(summary(fit)$coef[2,4], 5)))
+}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-21_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-04_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_1_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression <- function(path.obs, path.sim) {
+require(ggplot2)
+require(plyr)
+# Read data with observed yield
+df.obs <- read.table(path.obs, sep="\t", header=TRUE)
+# Read data with simulated yield, only read required columns
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim <- read.table(path.sim, colClasses = columnClasses, sep="\t", header=TRUE)
+# Convert units (from/to?) and extract planting year from date
+df.sim$yield <- df.sim$yield * 10000
+df.sim$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+# Merge sim and obs dataframes by location and  year
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+# Rename yield columns for clarity
+df <- rename(df, c("Yield"="yield.obs", "yield"="yield.sim"))
+# Graph sim vs obs
+fit <- lm(yield.obs ~ yield.sim, data = df)
+summary(fit)
+ggplot(df, aes(x=df$yield.obs, y=df$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+#geom_smooth(method='lm', se=TRUE) +
+stat_smooth(method="lm", formula = y ~ x, size=1) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+"Intercept =",signif(fit$coef[[1]],5 ),
+" Slope =",signif(fit$coef[[2]], 5),
+" P =",signif(summary(fit)$coef[2,4], 5)))
+}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-21_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-04_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_1_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression <- function(path.obs, path.sim) {
+require(ggplot2)
+require(plyr)
+# Read data with observed yield
+df.obs <- read.table(path.obs, sep="\t", header=TRUE)
+# Read data with simulated yield, only read required columns
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim <- read.table(path.sim, colClasses = columnClasses, sep="\t", header=TRUE)
+# Convert units (from/to?) and extract planting year from date
+df.sim$yield <- df.sim$yield * 10000
+df.sim$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+# Merge sim and obs dataframes by location and  year
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+# Rename yield columns for clarity
+df <- rename(df, c("Yield"="yield.obs", "yield"="yield.sim"))
+# Graph sim vs obs
+fit <- lm(yield.obs ~ yield.sim, data = df)
+summary(fit)
+ggplot(df, aes(x=df$yield.obs, y=df$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+#geom_smooth(method='lm', se=TRUE) +
+stat_smooth(method="lm", formula = y ~ x, size=1) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+"Intercept =",signif(fit$coef[[1]],5 ),
+" Slope2 =",signif(fit$coef[[2]], 5),
+" P =",signif(summary(fit)$coef[2,4], 5)))
+}
+ggplotRegression <- function(path.obs, path.sim) {
+require(ggplot2)
+require(plyr)
+# Read data with observed yield
+df.obs <- read.table(path.obs, sep="\t", header=TRUE)
+# Read data with simulated yield, only read required columns
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim <- read.table(path.sim, colClasses = columnClasses, sep="\t", header=TRUE)
+# Convert units (from/to?) and extract planting year from date
+df.sim$yield <- df.sim$yield * 10000
+df.sim$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+# Merge sim and obs dataframes by location and  year
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+# Rename yield columns for clarity
+df <- rename(df, c("Yield"="yield.obs", "yield"="yield.sim"))
+# Graph sim vs obs
+fit <- lm(yield.obs ~ yield.sim, data = df)
+summary(fit)
+ggplot(df, aes(x=df$yield.obs, y=df$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+#geom_smooth(method='lm', se=TRUE) +
+stat_smooth(method="lm", formula = y ~ x, size=1) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+"Intercept =",signif(fit$coef[[1]],5 ),
+" Slope2 =",signif(fit$coef[[2]], 5),
+" P =",signif(summary(fit)$coef[2,4], 5)))
+}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-04-21_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-04_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_1_season_all.dat")
+ggplotRegression <- function(path.obs, path.sim) {
+require(ggplot2)
+require(plyr)
+# Read data with observed yield
+df.obs <- read.table(path.obs, sep="\t", header=TRUE)
+# Read data with simulated yield, only read required columns
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim <- read.table(path.sim, colClasses = columnClasses, sep="\t", header=TRUE)
+# Convert units (from/to?) and extract planting year from date
+df.sim$yield <- df.sim$yield * 10000
+df.sim$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+# Merge sim and obs dataframes by location and  year
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+# Rename yield columns for clarity
+df <- rename(df, c("Yield"="yield.obs", "yield"="yield.sim"))
+# Graph sim vs obs
+fit <- lm(yield.obs ~ yield.sim, data = df)
+fit
+ggplot(df, aes(x=df$yield.obs, y=df$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+#geom_smooth(method='lm', se=TRUE) +
+stat_smooth(method="lm", formula = y ~ x, size=1) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+"Intercept =",signif(fit$coef[[1]],5 ),
+" Slope =",signif(fit$coef[[2]], 5),
+" P =",signif(summary(fit)$coef[2,4], 5)))
+}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression <- function(path.obs, path.sim) {
+require(ggplot2)
+require(plyr)
+# Read data with observed yield
+df.obs <- read.table(path.obs, sep="\t", header=TRUE)
+# Read data with simulated yield, only read required columns
+columnClasses = c("Date", rep("NULL", 10), "numeric", rep("NULL", 70), rep("character", 3), "NULL")
+df.sim <- read.table(path.sim, colClasses = columnClasses, sep="\t", header=TRUE)
+# Convert units (from/to?) and extract planting year from date
+df.sim$yield <- df.sim$yield * 10000
+df.sim$Year <- as.numeric(substring(df.sim.old$planting_date,0,4))
+# Merge sim and obs dataframes by location and  year
+df <- merge(df.obs, df.sim, by=c("location", "Year"))
+# Rename yield columns for clarity
+df <- rename(df, c("Yield"="yield.obs", "yield"="yield.sim"))
+# Graph sim vs obs
+fit <- lm(yield.obs ~ yield.sim, data = df)
+print(summary(fit))
+ggplot(df, aes(x=df$yield.obs, y=df$yield.sim)) +
+geom_point(shape=1) +
+geom_abline(slope=1) +
+#geom_smooth(method='lm', se=TRUE) +
+stat_smooth(method="lm", formula = y ~ x, size=1) +
+coord_cartesian(xlim=c(0,5000), ylim=c(0,5000)) +
+labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+"Intercept =",signif(fit$coef[[1]],5 ),
+" Slope =",signif(fit$coef[[2]], 5),
+" P =",signif(summary(fit)$coef[2,4], 5)))
+}
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_1_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_3_season_all.dat")
+ggplotRegression("Input\\observed_spring_canola_peas_wheat_planting_dates.txt", "Input\\17-05-05_2_season_all.dat")
+install.packages("installr"); library(installr)
+updateR()

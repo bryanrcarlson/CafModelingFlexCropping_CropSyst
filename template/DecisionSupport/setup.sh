@@ -41,10 +41,10 @@ svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/te
 chmod uga+rwx scenario_level.recognition
 
 echo "## Writing CS control files"
-echo "[simulation]" > simulation_date.Cs_control
-echo "rotation_cycling=false" > simulation_date.Cs_control
-echo "start_date=2017244" >> simulation_date.Cs_control
-echo "stop_date=2018273" >> simulation_date.Cs_control
+echo "[simulation]" > simulation_date.CS_control
+echo "rotation_cycling=false" > simulation_date.CS_control
+echo "start_date=2017244" >> simulation_date.CS_control
+echo "stop_date=2018273" >> simulation_date.CS_control
 
 echo "+ Years" > scenario_level.recognition
 echo "- Simulation" >> scenario_level.recognition

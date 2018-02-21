@@ -42,7 +42,7 @@ chmod uga+rwx scenario_level.recognition
 
 echo "## Writing CS control files"
 echo "[simulation]" > simulation_date.CS_control
-echo "rotation_cycling=false" > simulation_date.CS_control
+echo "rotation_cycling=false" >> simulation_date.CS_control
 echo "start_date=2017244" >> simulation_date.CS_control
 echo "stop_date=2018273" >> simulation_date.CS_control
 

@@ -9,6 +9,7 @@ run_time_graph=true
 display_profile=false
 OBSOLETE_NOW_DISCOVERED_report_format=C:\Simulation\Database\Format\all daily season annual XLS.FMT
 options=no_options.cs_output_options
+AWDOY=243
 [submodels]
 hourly=0
 run_chemical=false

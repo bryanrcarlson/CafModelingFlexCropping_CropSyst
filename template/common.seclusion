@@ -17,3 +17,6 @@
 - download*.bat
 - readme.txt
 #don't include all files rule as this is provided by the generator
+
+# exclude anything marked as obsolete
+- *_obsolete

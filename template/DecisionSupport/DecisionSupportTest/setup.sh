@@ -13,8 +13,6 @@ pushd Scenarios
     pushd rotations
         mkdir sC-wW
         mkdir sF-wW
-        #mkdir sP-wW
-        #mkdir sW-wW
     popd
 popd
 fi
@@ -62,19 +60,6 @@ echo "## Downloading dbf file..."
 # Specify locations to be simulated
 svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/Dbfs/verification_10.dbf
 chmod uga+rwx verification_10.dbf
-
-# Copy simulation controls
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/all.FMT --force
-chmod uga+rwx all.FMT
-
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/common.CropSyst_scenario --force
-chmod uga+rwx common.CropSyst_scenario
-
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/common.seclusion --force
-chmod uga+rwx common.seclusion
-
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/model_options.CS_control --force
-chmod uga+rwx model_options.CS_control
 
 # config scenario
 if [ ! -f "scenario_level.recognition" ]; then

@@ -13,8 +13,8 @@ pushd Scenarios
     pushd rotations
         mkdir sC-wW
         mkdir sF-wW
-        mkdir sP-wW
-        mkdir sW-wW
+        #mkdir sP-wW
+        #mkdir sW-wW
     popd
 popd
 fi
@@ -24,7 +24,7 @@ if [ ! -d "Database" ]; then
     mkdir Database
     pushd Database
         mkdir Simulation
-        pushd Simulation
+        pushd Simulation 
             mkdir emulate
             pushd emulate
                 echo "[simulation]" >> 2017-2018.CS_control
@@ -58,12 +58,12 @@ if [ ! -d "Database" ]; then
     popd
 fi
 
-# Copy simulation controls
 echo "## Downloading dbf file..."
 # Specify locations to be simulated
 svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/Dbfs/verification_10.dbf
 chmod uga+rwx verification_10.dbf
 
+# Copy simulation controls
 svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/all.FMT --force
 chmod uga+rwx all.FMT
 
@@ -76,13 +76,13 @@ chmod uga+rwx common.seclusion
 svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/model_options.CS_control --force
 chmod uga+rwx model_options.CS_control
 
-svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/template/scenario_level.recognition --force
-chmod uga+rwx scenario_level.recognition
-
-echo "+ emulate" > scenario_level.recognition
-echo "+ preclude" >> scenario_level.recognition
-echo "+ Years" >> scenario_level.recognition
-echo "- Simulation" >> scenario_level.recognition
-echo "+ *" >> scenario_level.recognition
+# config scenario
+if [ ! -f "scenario_level.recognition" ]; then
+	echo "+ emulate" >> scenario_level.recognition
+	echo "+ preclude" >> scenario_level.recognition
+	echo "+ Years" >> scenario_level.recognition
+	echo "- Simulation" >> scenario_level.recognition
+	echo "+ *" >> scenario_level.recognition
+fi
 
 echo "## Finished"

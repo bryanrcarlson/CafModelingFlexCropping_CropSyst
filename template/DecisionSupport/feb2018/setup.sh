@@ -64,14 +64,13 @@ svn export https://github.com/caf-ltar/CafModelingFlexCropping_CropSyst/trunk/te
 chmod uga+rwx aec_dryland.dbf
 
 
-echo "## Writing CS control files"
-echo "[simulation]" > simulation_date.CS_control
-echo "rotation_cycling=false" >> simulation_date.CS_control
-echo "start_date=2017244" >> simulation_date.CS_control
-echo "stop_date=2018273" >> simulation_date.CS_control
-
-echo "+ Years" > scenario_level.recognition
-echo "- Simulation" >> scenario_level.recognition
-echo "+ *" >> scenario_level.recognition
+# config scenario
+if [ ! -f "scenario_level.recognition" ]; then
+	echo "+ emulate" >> scenario_level.recognition
+	echo "+ preclude" >> scenario_level.recognition
+	echo "+ Years" >> scenario_level.recognition
+	echo "- Simulation" >> scenario_level.recognition
+	echo "+ *" >> scenario_level.recognition
+fi
 
 echo "## Finished"

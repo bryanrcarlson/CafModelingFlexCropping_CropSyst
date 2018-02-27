@@ -1,4 +1,4 @@
-setwd("C:\\OneDrive\\OneDrive - Washington State University (email.wsu.edu)\\Projects\\CafModelingFlexCropping\\Methods\\ModelAssessment\\RegionalRunLessPreclude\\Scenarios\\17-06-30\\seasonByLoc")
+setwd("C:\\Files\\Projects\\CafModelingFlexCropping\\Feb2018RunOnThinkmate2_20180227\\18-02-26\\collate")
 
 ued <- "season" #met, soil
 
@@ -22,7 +22,7 @@ for(f in 1:length(files)){
   
   if(ued == "season")
   {
-    cols <- c(rep("character", 5), rep("numeric",11), rep("character",2), "integer", rep("character", 2), "integer")
+    cols <- c(rep("character", 5), rep("numeric",11), rep("character",4), rep("integer", 2))
   }
   else if(ued == "met")
   {

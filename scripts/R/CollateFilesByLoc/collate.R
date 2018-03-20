@@ -26,18 +26,18 @@ for(f in 1:length(files)){
   }
   else if(ued == "met")
   {
-    cols <- c("integer", "NULL", "numeric", rep("character",2), "integer", rep("character", 3))
+    #cols <- c("integer", "NULL", "numeric", rep("character",2), "integer", rep("character", 3))
   }
   else if(ued == "soil")
   {
-    cols <- c("integer", rep("numeric",3), rep("character",2), "integer", rep("character", 2), "integer")
+    #cols <- c("integer", rep("numeric",3), rep("character",2), "integer", rep("character", 2), "integer")
   }
   else
   {
     stop()
   }
   
-  f.df <- read.table(files[f], header=TRUE,sep="\t", colClasses = cols)
+  f.df <- read.table(files[f], header=TRUE, sep="\t", colClasses = cols)
   
   if(nrow(f.df) > 0)
   {
@@ -47,9 +47,8 @@ for(f in 1:length(files)){
     df <- rbind(df, f.df)
   }
 }
-foo <- cat(ued, "_all.dat", sep = "")
 
-outfile <- paste(ued, "_all.dat", sep = "")
+outfile <- paste("../", ued, "_all.dat", sep = "")
 write.table(df, outfile, sep = "\t", row.names = FALSE)
 
 #write.table(df, "season_all.dat", sep = "\t", row.names = FALSE)

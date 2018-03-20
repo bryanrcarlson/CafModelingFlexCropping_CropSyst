@@ -1,4 +1,4 @@
-## 06/20/2017
+## Summary (06/20/2017)
 * /
 	* FlexCropping project folder; future home of the decision support tool including realtime updating, etc
 * Database/
@@ -10,3 +10,9 @@
 	* Project template directory - a mirror of Kaur directory prior to running setup scripts.  For new setups, it is advised to copy/paste the template directory, rename it, and run setup.sh scripts starting at the higher directory level and moving to a specific scenario directory.
 * scripts
 	* Scripts relating to collating output and other helper utils
+
+## License
+
+As a work of the United States government, this project is in the public domain within the United States.
+
+Additionally, we waive copyright and related rights in the work worldwide through the CC0 1.0 Universal public domain dedication.
